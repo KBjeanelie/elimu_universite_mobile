@@ -1,6 +1,5 @@
 import 'package:elimu_universite_mobile/config/themes.dart';
 import 'package:elimu_universite_mobile/screens/dashboard_screen.dart';
-import 'package:elimu_universite_mobile/widgets/widgets.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 
