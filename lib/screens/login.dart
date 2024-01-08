@@ -34,9 +34,9 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
+              Text(
                 'ELIMU',
-                style: TextStyle(
+                style: GoogleFonts.poppins(
                   color: Colors.white,
                   fontSize: 30,
                   fontWeight: FontWeight.w800,
@@ -46,8 +46,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 50,
               ),
               Container(
-                height: 30,
-                width: 250,
+                height: 40,
+                width: 350,
+                alignment: Alignment.center,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(5),
@@ -55,15 +56,20 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: TextFormField(
                   controller: emailController,
                   keyboardType: TextInputType.emailAddress,
-                  decoration: const InputDecoration(icon: Icon(Icons.person)),
+                  decoration: const InputDecoration(
+                      icon: Icon(
+                    Icons.person,
+                    color: Colors.black,
+                    size: 35,
+                  )),
                 ),
               ),
               const SizedBox(
-                height: 10,
+                height: 20,
               ),
               Container(
-                height: 30,
-                width: 250,
+                height: 40,
+                width: 350,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(5),
@@ -72,17 +78,19 @@ class _LoginScreenState extends State<LoginScreen> {
                   controller: mdpController,
                   keyboardType: TextInputType.visiblePassword,
                   decoration: InputDecoration(
-                    icon: const Icon(Icons.lock),
-                    suffixIcon: GestureDetector(
-                      child: IconButton(
-                        onPressed: () {
-                          setState(() {
-                            obscureText = !obscureText;
-                          });
-                        },
-                        icon: Icon(obscureText
-                            ? Icons.visibility
-                            : Icons.visibility_off),
+                    icon: const Icon(
+                      Icons.lock,
+                      color: Colors.black,
+                    ),
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          obscureText = !obscureText;
+                        });
+                      },
+                      icon: Icon(
+                        obscureText ? Icons.visibility : Icons.visibility_off,
+                        color: Colors.black,
                       ),
                     ),
                   ),
