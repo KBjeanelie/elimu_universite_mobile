@@ -1,4 +1,6 @@
+import 'package:elimu_universite_mobile/screens/devoir.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -9,12 +11,12 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController mdpController = TextEditingController();
+  bool obscureText = false;
+
   @override
   Widget build(BuildContext context) {
-    TextEditingController emailController = TextEditingController();
-    TextEditingController mdpController = TextEditingController();
-
-    bool obscureText = false;
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: Container(
@@ -51,17 +53,22 @@ class _LoginScreenState extends State<LoginScreen> {
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(5),
+                  borderRadius: BorderRadius.circular(8),
                 ),
-                child: TextFormField(
-                  controller: emailController,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: const InputDecoration(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: TextFormField(
+                    controller: emailController,
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: const InputDecoration(
                       icon: Icon(
-                    Icons.person,
-                    color: Colors.black,
-                    size: 35,
-                  )),
+                        IconlyLight.profile,
+                        color: Colors.black,
+                        size: 24,
+                      ),
+                      hintText: 'Entrez nom d\'utilisateur',
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(
@@ -72,37 +79,69 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: 350,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(5),
+                  borderRadius: BorderRadius.circular(8),
                 ),
-                child: TextFormField(
-                  controller: mdpController,
-                  keyboardType: TextInputType.visiblePassword,
-                  decoration: InputDecoration(
-                    icon: const Icon(
-                      Icons.lock,
-                      color: Colors.black,
-                    ),
-                    suffixIcon: IconButton(
-                      onPressed: () {
-                        setState(() {
-                          obscureText = !obscureText;
-                        });
-                      },
-                      icon: Icon(
-                        obscureText ? Icons.visibility : Icons.visibility_off,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: TextFormField(
+                    controller: mdpController,
+                    keyboardType: TextInputType.visiblePassword,
+                    obscureText: obscureText,
+                    decoration: InputDecoration(
+                      icon: const Icon(
+                        IconlyLight.lock,
                         color: Colors.black,
+                      ),
+                      hintText: 'Mot de Passe',
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            obscureText = !obscureText;
+                          });
+                        },
+                        icon: Icon(
+                          obscureText ? Icons.visibility : Icons.visibility_off,
+                          color:
+                              obscureText ? Colors.black : Colors.blue.shade900,
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
+              const SizedBox(
+                height: 20,
+              ),
               const Row(),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(0, 103, 135, 182),
+              const SizedBox(
+                height: 20,
+              ),
+              Container(
+                width: 240,
+                height: 50,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromRGBO(103, 135, 182, 0),
+                    enableFeedback: true,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DevoirScreen(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    'Se connecter',
+                    style: GoogleFonts.poppins(
+                      fontSize: 15,
+                    ),
+                  ),
                 ),
-                onPressed: () {},
-                child: const Text('Connexion'),
               ),
             ],
           ),

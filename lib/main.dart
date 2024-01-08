@@ -2,8 +2,6 @@ import 'package:elimu_universite_mobile/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:io' show Platform;
-import 'package:google_fonts/google_fonts.dart';
-
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
