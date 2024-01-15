@@ -1,3 +1,5 @@
+import 'package:elimu_universite_mobile/config/size_config.dart';
+import 'package:elimu_universite_mobile/screens/eventandAnnounce.dart';
 import 'package:elimu_universite_mobile/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -18,6 +20,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    //initialisation des taille responsives
+    SizeConfig().init(context);
+
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
         statusBarColor: const Color.fromRGBO(25, 40, 62, 0),
@@ -34,7 +39,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue.shade900),
         useMaterial3: false,
       ),
-      home: const SplashScreen(),
+      home: const EventAnnouce(),
     );
   }
 }
