@@ -1,4 +1,7 @@
+import 'package:elimu_universite_mobile/config/themes.dart';
+import 'package:elimu_universite_mobile/widget/custom_appbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 
 import '../widgets/widgets.dart';
 
@@ -9,8 +12,19 @@ class CarreerScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text("Texte"),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              IconlyLight.arrowLeft2,
+              color: Colors.black,
+            )),
+        title: const CustomAppBar(
+          text: 'Parcours',
+        ),
+        centerTitle: true,
+        backgroundColor: white,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.only(bottom: 15),

@@ -1,4 +1,5 @@
 import 'package:elimu_universite_mobile/screens/devoir.dart';
+import 'package:elimu_universite_mobile/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -128,10 +129,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => DevoirScreen(),
+                        builder: (context) => const HomeScreen(),
                       ),
                     );
                   },

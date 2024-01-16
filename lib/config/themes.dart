@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 const white = Colors.white;
 const black = Colors.black;
@@ -32,7 +33,7 @@ Text customeTextStyle(String text,
   return Text(
     text,
     textAlign: align,
-    style: TextStyle(
+    style: GoogleFonts.comfortaa(
       color: color,
       letterSpacing: letterSpace,
       fontSize: size,

@@ -1,6 +1,8 @@
 import 'package:elimu_universite_mobile/config/themes.dart';
+import 'package:elimu_universite_mobile/widget/custom_appbar.dart';
 import 'package:elimu_universite_mobile/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 
 class FinanceScreen extends StatelessWidget {
   const FinanceScreen({super.key});
@@ -10,8 +12,19 @@ class FinanceScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: getColorFromHex("#E2E2E2"),
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text("Hello"),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              IconlyLight.arrowLeft2,
+              color: Colors.black,
+            )),
+        title: const CustomAppBar(
+          text: 'Finance',
+        ),
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       ),
       body: DefaultTabController(length: 3,
         child: Column(

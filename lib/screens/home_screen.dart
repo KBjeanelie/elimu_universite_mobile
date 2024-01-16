@@ -2,6 +2,7 @@ import 'package:elimu_universite_mobile/config/themes.dart';
 import 'package:elimu_universite_mobile/screens/dashboard_screen.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -29,6 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: white,
         title: customeTextStyle("Bonjour, Ruth", size: 17),
         actions: [
           IconButton(
@@ -36,7 +38,8 @@ class _HomeScreenState extends State<HomeScreen> {
               
             },
             icon: CircleAvatar(
-              child: customeIcon(EvaIcons.bellOutline),
+              backgroundColor: Colors.grey.shade200,
+              child: customeIcon(IconlyLight.notification),
             ),
           )
         ],
@@ -61,23 +64,23 @@ class _HomeScreenState extends State<HomeScreen> {
         onTap: onTabTapped,
         items: [
           BottomNavigationBarItem(
-            icon: customeIcon(EvaIcons.homeOutline),
-            activeIcon: customeIcon(EvaIcons.home),
+            icon: customeIcon(IconlyLight.home),
+            activeIcon: customeIcon(IconlyBold.home),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: customeIcon(EvaIcons.messageCircleOutline),
-            activeIcon: customeIcon(EvaIcons.messageCircle),
+            icon: customeIcon(IconlyLight.message),
+            activeIcon: customeIcon(IconlyBold.message),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: customeIcon(EvaIcons.phoneCallOutline),
-            activeIcon: customeIcon(EvaIcons.phoneCall),
+            icon: customeIcon(IconlyLight.calling),
+            activeIcon: customeIcon(IconlyBold.calling),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: customeIcon(EvaIcons.personOutline),
-            activeIcon: customeIcon(EvaIcons.person),
+            icon: customeIcon(IconlyLight.profile),
+            activeIcon: customeIcon(IconlyBold.profile),
             label: '',
           ),
         ],
