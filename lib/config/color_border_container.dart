@@ -7,3 +7,11 @@ Color cBlue = Color.fromARGB(155, 53, 165, 199);
 Color bBlue = Color.fromARGB(76, 103, 135, 182);
 Color bViolet = Color.fromARGB(151, 99, 41, 133);
 Color bRouge = Color.fromARGB(172, 244, 67, 54);
+
+//////
+///Background Color cours
+Color bkJaune = Colors.yellow;
+Color bkVert = Colors.green;
+Color bkViolet = Colors.purple;
+Color bkRouge = Colors.red;
+Color bkBleu = Colors.blue;

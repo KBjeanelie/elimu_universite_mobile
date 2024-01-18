@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class DevoirScreen extends StatelessWidget {
   const DevoirScreen({super.key});
 
@@ -14,13 +13,14 @@ class DevoirScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           leading: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: const Icon(
-                IconlyLight.arrowLeft2,
-                color: Colors.black,
-              )),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              IconlyLight.arrowLeft2,
+              color: Colors.black,
+            ),
+          ),
           title: const CustomAppBar(
             text: 'Devoir Maison',
           ),

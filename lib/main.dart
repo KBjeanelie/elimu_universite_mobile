@@ -1,5 +1,6 @@
 import 'package:elimu_universite_mobile/config/size_config.dart';
 import 'package:elimu_universite_mobile/screens/eventandAnnounce.dart';
+import 'package:elimu_universite_mobile/screens/planning.dart';
 import 'package:elimu_universite_mobile/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue.shade900),
         useMaterial3: false,
       ),
-      home: const EventAnnouce(),
+      home: const EmploiDuTemps(),
     );
   }
 }

@@ -183,7 +183,7 @@ class EventAnnouce extends StatelessWidget {
                                   Navigator.pop(context, 'Inscrit');
                                 },
                                 child: Text(
-                                  'Retour',
+                                  'S\'inscrire',
                                   style: GoogleFonts.poppins(),
                                 ),
                               ),
@@ -293,7 +293,95 @@ class AnnounceModel extends StatelessWidget {
               thickness: 1,
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                showDialog<String>(
+                  context: context,
+                  builder: (BuildContext context) => AlertDialog(
+                    title: SizedBox(
+                      width: 100,
+                      child: Column(children: [
+                        Stack(
+                          children: [
+                            Positioned(
+                              child: Icon(
+                                IconlyLight.volumeDown,
+                                size: getProportionateScreenHeight(55),
+                              ),
+                            ),
+                            Positioned(
+                              left: 0,
+                              bottom: 2,
+                              child: Container(
+                                height: 23,
+                                width: 23,
+                                decoration: BoxDecoration(
+                                  color: bViolet,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                              ),
+                            ),
+                            // TITRE de l'evenement ou de l'annonce
+                          ],
+                        ),
+                        Text(
+                          'Journée de l\'indépendance',
+                          style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 15,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        const Divider(
+                          color: Colors.grey,
+                          indent: 30,
+                          endIndent: 30,
+                          height: 1,
+                          thickness: 1,
+                        ),
+                      ]),
+                    ),
+                    content: SizedBox(
+                      width: double.infinity,
+                      child: Text(
+                        'School will remain close on,\n15th August, 2024',
+                        style: GoogleFonts.poppins(
+                          fontSize: getProportionateScreenHeight(14),
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    actions: <Widget>[
+                      Center(
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color.fromARGB(150, 255, 214, 64),
+                                spreadRadius: 1,
+                                blurRadius: 3,
+                              ),
+                            ],
+                          ),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.pop(context, 'Inscrit');
+                            },
+                            style: ElevatedButton.styleFrom(
+                                fixedSize: const Size(200, 40),
+                                backgroundColor: Colors.amber),
+                            child: Text(
+                              'Retour',
+                              style: GoogleFonts.poppins(),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              },
               child: Text(
                 'read more',
                 style: GoogleFonts.poppins(
