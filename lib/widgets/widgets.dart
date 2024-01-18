@@ -1,6 +1,7 @@
 // C'est dans ce fichier que sera créer tous les widgets nécéssaire à notre application
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../config/themes.dart';
 
 
@@ -230,3 +231,142 @@ Container cardCareer(BuildContext context){
     ),
   );
 }
+
+
+class EleveCard extends StatefulWidget {
+  final String name;
+  final String photoProfil;
+  final String country;
+  const EleveCard({
+    Key? key,
+    required this.name,
+    required this.photoProfil,
+    required this.country,
+  }) : super(key: key);
+
+  @override
+  State<EleveCard> createState() => _EleveCardState();
+}
+
+class _EleveCardState extends State<EleveCard> {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const SizedBox(
+            height: 20,
+          ),
+          ClipOval(
+            child: Image.asset(
+              widget.photoProfil,
+              width: 110,
+              height: 110,
+              fit: BoxFit.cover,
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Text(
+            widget.name, // Utilisez widget.nomPrenom ici
+            style: GoogleFonts.poppins(
+              fontSize: 30,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          Text(
+            widget.country, // Utilisez widget.nomPrenom ici
+            style: GoogleFonts.poppins(
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+class EleveCard2 extends StatefulWidget {
+  final String name;
+  final String photoProfil;
+  final String? descrip;
+  const EleveCard2({
+    Key? key,
+    required this.name,
+    required this.photoProfil,
+    this.descrip,
+  }) : super(key: key);
+
+  @override
+  State<EleveCard2> createState() => _EleveCard2State();
+}
+
+class _EleveCard2State extends State<EleveCard2> {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+              
+                ClipOval(
+                  child: Image.asset(
+                    widget.photoProfil,
+                    width: 70,
+                    height: 60,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8,bottom: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        widget.name,
+                        style: GoogleFonts.poppins(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                     Container(
+                    constraints: BoxConstraints(maxWidth:275),  child: Text(
+                      'HELLO WORD',
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: GoogleFonts.poppins(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Divider(
+            height: 4,
+            color: Colors.grey,
+          )
+        ],
+      ),
+    );
+  }
+}
+
