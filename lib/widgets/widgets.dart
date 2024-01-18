@@ -25,9 +25,9 @@ Container messageGroupModel(BuildContext context){
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                customeTextStyle("Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée."),
+                customeTextStyleMessage("Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée."),
                 Container(
-                  child: customeTextStyle("12:41"),
+                  child: customeTextStyleMessage("12:41"),
                 )
               ],
             ),
@@ -55,9 +55,9 @@ Container messageGroupUser(BuildContext context){
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                customeTextStyle("Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée."),
+                customeTextStyleMessage("Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée."),
                 Container(
-                  child: customeTextStyle("12:41"),
+                  child: customeTextStyleMessage("12:41"),
                 )
               ],
             ),
@@ -296,12 +296,12 @@ class _EleveCardState extends State<EleveCard> {
 class EleveCard2 extends StatefulWidget {
   final String name;
   final String photoProfil;
-  final String? descrip;
+  final String descrip;
   const EleveCard2({
     Key? key,
     required this.name,
     required this.photoProfil,
-    this.descrip,
+    required this.descrip,
   }) : super(key: key);
 
   @override
@@ -325,8 +325,8 @@ class _EleveCard2State extends State<EleveCard2> {
                 ClipOval(
                   child: Image.asset(
                     widget.photoProfil,
-                    width: 70,
-                    height: 60,
+                    width: 55,
+                    height: 50,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -338,22 +338,87 @@ class _EleveCard2State extends State<EleveCard2> {
                     children: [
                       Text(
                         widget.name,
-                        style: GoogleFonts.poppins(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
+                        style: GoogleFonts.comfortaa(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                      Container(
-                    constraints: BoxConstraints(maxWidth:275),  child: Text(
-                      'HELLO WORD',
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: GoogleFonts.poppins(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
+                      constraints: const BoxConstraints(maxWidth:275),  child: Text(
+                        '${widget.descrip.substring(0, 50)}...',
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: GoogleFonts.openSans(
+                          fontSize: 12,
+                          
+                        ),
                       ),
                     ),
+                    ],
                   ),
+                ),
+              ],
+            ),
+          ),
+          Divider(
+            height: 4,
+            color: Colors.grey,
+          )
+        ],
+      ),
+    );
+  }
+}
+
+
+class EleveCard3 extends StatefulWidget {
+  final String name;
+  final String photoProfil;
+  const EleveCard3({
+    Key? key,
+    required this.name,
+    required this.photoProfil,
+  }) : super(key: key);
+
+  @override
+  State<EleveCard3> createState() => _EleveCard3State();
+}
+
+class _EleveCard3State extends State<EleveCard3> {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+              
+                ClipOval(
+                  child: Image.asset(
+                    widget.photoProfil,
+                    width: 55,
+                    height: 50,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8,bottom: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        widget.name,
+                        style: GoogleFonts.comfortaa(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                     ],
                   ),
                 ),

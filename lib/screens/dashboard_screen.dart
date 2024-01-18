@@ -1,3 +1,4 @@
+import 'package:elimu_universite_mobile/config/themes.dart';
 import 'package:elimu_universite_mobile/screens/carreer_screen.dart';
 import 'package:elimu_universite_mobile/screens/devoir.dart';
 import 'package:elimu_universite_mobile/screens/eventandAnnounce.dart';
@@ -13,6 +14,21 @@ class DashBoardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: white,
+        title: customeTextStyle("Bonjour, Ruth", size: 17),
+        actions: [
+          IconButton(
+            onPressed: () {
+              
+            },
+            icon: CircleAvatar(
+              backgroundColor: Colors.grey.shade200,
+              child: customeIcon(IconlyLight.notification),
+            ),
+          )
+        ],
+      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.only(bottom: 15),
         child: Container(

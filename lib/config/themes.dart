@@ -42,3 +42,21 @@ Text customeTextStyle(String text,
   );
 }
 
+Text customeTextStyleMessage(String text,
+  {FontWeight fontWeight = FontWeight.normal,
+  double size = 15,
+  double letterSpace = 0.5,
+  Color color = black,
+  TextAlign align = TextAlign.start}) {
+  return Text(
+    text,
+    textAlign: align,
+    style: GoogleFonts.openSans(
+      color: color,
+      letterSpacing: letterSpace,
+      fontSize: size,
+      fontWeight: fontWeight
+    )
+  );
+}
+

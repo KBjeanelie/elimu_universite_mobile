@@ -1,3 +1,5 @@
+import 'package:elimu_universite_mobile/config/size_config.dart';
+import 'package:elimu_universite_mobile/config/themes.dart';
 import 'package:elimu_universite_mobile/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,21 +16,14 @@ class _AccountScreenState extends State<AccountScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        shape: const Border(bottom: BorderSide(width: 1, color: Colors.grey)),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: const Icon(
-            Icons.arrow_back_ios_new,
-            color: Colors.black,
-          ),
-        ),
+        backgroundColor: white,
         title: Center(
           child: Text(
             "Profile",
             style: GoogleFonts.poppins(
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.bold,
+              color: black,
+              fontSize: getProportionateScreenHeight(20)
             ),
           ),
         ),
