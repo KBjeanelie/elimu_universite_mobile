@@ -7,27 +7,28 @@ import '../config/themes.dart';
 
 Container messageGroupModel(BuildContext context){
   return Container(
-    margin: const EdgeInsets.only(left: 15, right: 15, top: 15),
+    margin: const EdgeInsets.only(left: 15, right: 15, top: 5),
     child: Row(
       children: [
         Container(
-          margin: const EdgeInsets.only(bottom: 140),
+          margin: const EdgeInsets.only(bottom: 100),
           child: CircleAvatar(backgroundColor: Colors.grey.shade500,)
         ),
         Expanded(
           child: Container(
-            margin: const EdgeInsets.only(left: 15),
-            padding: const EdgeInsets.only(top: 5, left: 8, right: 8, bottom: 5),
+            margin: const EdgeInsets.only(left: 2),
+            padding: const EdgeInsets.all(5),
             decoration: BoxDecoration(
               color: getColorFromHex("#FAFF00"),
-              borderRadius: BorderRadius.circular(5)
+              borderRadius: BorderRadius.circular(20)
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                customeTextStyleMessage("Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée."),
+                customeTextStyleMessage("Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.",
+                size: 12),
                 Container(
-                  child: customeTextStyleMessage("12:41"),
+                  child: customeTextStyleMessage("12:41", size: 9),
                 )
               ],
             ),
@@ -41,30 +42,32 @@ Container messageGroupModel(BuildContext context){
 
 Container messageGroupUser(BuildContext context){
   return Container(
-    margin: const EdgeInsets.only(left: 15, right: 15, top: 15),
+    margin: const EdgeInsets.only(left: 15, right: 15, top: 5),
     child: Row(
       children: [
         Expanded(
           child: Container(
-            margin: const EdgeInsets.only(right: 15),
-            padding: const EdgeInsets.only(top: 5, left: 8, right: 8, bottom: 5),
+            margin: const EdgeInsets.only(right: 2),
+            padding: const EdgeInsets.all(5),
             decoration: BoxDecoration(
-              color: getColorFromHex("#00000008"),
-              borderRadius: BorderRadius.circular(5)
+              color: Colors.grey.shade100,
+              borderRadius: BorderRadius.circular(20)
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                customeTextStyleMessage("Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée."),
+                customeTextStyleMessage("Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.",
+                size: 13
+                ),
                 Container(
-                  child: customeTextStyleMessage("12:41"),
+                  child: customeTextStyleMessage("12:41", size: 9),
                 )
               ],
             ),
           ),
         ),
         Container(
-          margin: const EdgeInsets.only(bottom: 140),
+          margin: const EdgeInsets.only(bottom: 130),
           child: CircleAvatar(backgroundColor: Colors.grey.shade500,)
         ),
       ],
@@ -87,8 +90,8 @@ Container cardFinance(BuildContext context){
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          customeTextStyle("Frais Mensuel", size: 17, fontWeight: FontWeight.bold),
-          customeTextStyle("Octobre", size: 17, fontWeight: FontWeight.bold),
+          customeTextStyle("Frais Mensuel", size: 15, fontWeight: FontWeight.bold),
+          customeTextStyle("Octobre", size: 15, fontWeight: FontWeight.bold),
         ],
       ),
       Container(
@@ -118,8 +121,8 @@ Container cardFinance(BuildContext context){
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            customeTextStyle("Total", size: 17, fontWeight: FontWeight.bold),
-            customeTextStyle("30 000F CFA", size: 17, fontWeight: FontWeight.bold),
+            customeTextStyle("Total", size: 15, fontWeight: FontWeight.bold),
+            customeTextStyle("30 000F CFA", size: 15, fontWeight: FontWeight.bold),
           ],
         ),
       )
@@ -130,7 +133,7 @@ Container cardFinance(BuildContext context){
 Container cardMenue(BuildContext context, IconData icon, String label, {Color color = black}){
   return Container(
     width: MediaQuery.sizeOf(context).width * 0.4,
-    height: MediaQuery.sizeOf(context).height * 0.2,
+    height: MediaQuery.sizeOf(context).height * 0.17,
     alignment: Alignment.center,
     decoration: BoxDecoration(
       color: white,
@@ -149,11 +152,11 @@ Container cardMenue(BuildContext context, IconData icon, String label, {Color co
       children: <Widget>[
         Container(
           margin: top,
-          child: customeIcon(icon, color: color, iconSize: 80,)),
+          child: customeIcon(icon, color: color, iconSize: 70,)),
         Container(
           margin: top,
           alignment: Alignment.center,
-          child: customeTextStyle(label))
+          child: customeTextStyle(label, size: 13))
       ],
     ),
   );
@@ -162,8 +165,8 @@ Container cardMenue(BuildContext context, IconData icon, String label, {Color co
 Container cardCareer(BuildContext context){
   return Container(
     margin: const EdgeInsets.only(top: 30),
-    width: MediaQuery.sizeOf(context).width * 0.8,
-    height: MediaQuery.sizeOf(context).height * 0.42,
+    width: MediaQuery.sizeOf(context).width * 0.7,
+    height: MediaQuery.sizeOf(context).height * 0.4,
     decoration: BoxDecoration(
       color: white,
       borderRadius: BorderRadius.circular(20),
@@ -182,17 +185,17 @@ Container cardCareer(BuildContext context){
         Container(
           margin: top,
           alignment: Alignment.center,
-          width: 65,
-          height: 65,
+          width: 50,
+          height: 50,
           decoration: BoxDecoration(
             color: getColorFromHex("#A066FF"),
             borderRadius: BorderRadius.circular(50)
           ),
-          child: customeIcon(EvaIcons.homeOutline, iconSize: 35, color: getColorFromHex("#794DC0")),
+          child: customeIcon(EvaIcons.homeOutline, iconSize: 30, color: getColorFromHex("#794DC0")),
         ),
         Container(
-          margin: const EdgeInsets.only(top: 20),
-          child: customeTextStyle("Parcours :", size: 17, fontWeight: FontWeight.w600),
+          margin: const EdgeInsets.only(top: 10),
+          child: customeTextStyle("Parcours :", size: 15, fontWeight: FontWeight.w600),
         ),
         Container(
           child: customeTextStyle("Lic Info 1", fontWeight: FontWeight.w600),
@@ -202,7 +205,7 @@ Container cardCareer(BuildContext context){
           child: lineBar,
         ),
         Container(
-          child: customeTextStyle("Niveau :", size: 17, fontWeight: FontWeight.w600),
+          child: customeTextStyle("Niveau :", size: 15, fontWeight: FontWeight.w600),
         ),
         Container(
           child: customeTextStyle("Première année", fontWeight: FontWeight.w600),
@@ -212,7 +215,7 @@ Container cardCareer(BuildContext context){
           child: lineBar,
         ),
         Container(
-          child: customeTextStyle("Moyenne :", size: 17, fontWeight: FontWeight.w600),
+          child: customeTextStyle("Moyenne :", size: 15, fontWeight: FontWeight.w600),
         ),
         Container(
           child: customeTextStyle("12,50", fontWeight: FontWeight.w600),
@@ -222,7 +225,7 @@ Container cardCareer(BuildContext context){
           child: lineBar,
         ),
         Container(
-          child: customeTextStyle("Année académique :", size: 17, fontWeight: FontWeight.w600),
+          child: customeTextStyle("Année académique :", size: 15, fontWeight: FontWeight.w600),
         ),
         Container(
           child: customeTextStyle("2022 - 2023", fontWeight: FontWeight.w600),
@@ -261,23 +264,20 @@ class _EleveCardState extends State<EleveCard> {
           ClipOval(
             child: Image.asset(
               widget.photoProfil,
-              width: 110,
-              height: 110,
+              width: 100,
+              height: 100,
               fit: BoxFit.cover,
             ),
           ),
           const SizedBox(
-            height: 10,
+            height: 5,
           ),
           Text(
             widget.name, // Utilisez widget.nomPrenom ici
             style: GoogleFonts.poppins(
-              fontSize: 30,
+              fontSize: 25,
               fontWeight: FontWeight.w400,
             ),
-          ),
-          const SizedBox(
-            height: 8,
           ),
           Text(
             widget.country, // Utilisez widget.nomPrenom ici
@@ -311,60 +311,20 @@ class EleveCard2 extends StatefulWidget {
 class _EleveCard2State extends State<EleveCard2> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-              
-                ClipOval(
-                  child: Image.asset(
-                    widget.photoProfil,
-                    width: 55,
-                    height: 50,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 8,bottom: 10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        widget.name,
-                        style: GoogleFonts.comfortaa(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                     Container(
-                      constraints: const BoxConstraints(maxWidth:275),  child: Text(
-                        '${widget.descrip.substring(0, 50)}...',
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        style: GoogleFonts.openSans(
-                          fontSize: 12,
-                          
-                        ),
-                      ),
-                    ),
-                    ],
-                  ),
-                ),
-              ],
+    return Container(
+      color: Colors.grey.shade100,
+      margin: const EdgeInsets.only(top: 2),
+      child: ListTile(
+        leading: ClipOval(
+            child: Image.asset(
+              widget.photoProfil,
+              width: 40,
+              height: 40,
+              fit: BoxFit.cover,
             ),
           ),
-          Divider(
-            height: 4,
-            color: Colors.grey,
-          )
-        ],
+        title: customeTextStyle(widget.name, size: 13, fontWeight: FontWeight.w600),
+        subtitle: customeTextStyleMessage('${widget.descrip.substring(0, 50)}...', size: 12, fontWeight: FontWeight.w300),
       ),
     );
   }
@@ -387,49 +347,20 @@ class EleveCard3 extends StatefulWidget {
 class _EleveCard3State extends State<EleveCard3> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-              
-                ClipOval(
-                  child: Image.asset(
-                    widget.photoProfil,
-                    width: 55,
-                    height: 50,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 8,bottom: 10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        widget.name,
-                        style: GoogleFonts.comfortaa(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+    return Container(
+      color: Colors.grey.shade100,
+      margin: const EdgeInsets.only(top: 2),
+      child: ListTile(
+        leading: ClipOval(
+            child: Image.asset(
+              widget.photoProfil,
+              width: 40,
+              height: 40,
+              fit: BoxFit.cover,
             ),
           ),
-          Divider(
-            height: 4,
-            color: Colors.grey,
-          )
-        ],
+        title: customeTextStyle(widget.name, size: 13, fontWeight: FontWeight.w600),
+        
       ),
     );
   }

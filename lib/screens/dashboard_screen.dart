@@ -16,7 +16,7 @@ class DashBoardScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: white,
-        title: customeTextStyle("Bonjour, Ruth", size: 17),
+        title: customeTextStyle("Bonjour, Ruth", size: 14),
         actions: [
           IconButton(
             onPressed: () {
@@ -32,11 +32,16 @@ class DashBoardScreen extends StatelessWidget {
       body: SingleChildScrollView(
         padding: const EdgeInsets.only(bottom: 15),
         child: Container(
-          margin: const EdgeInsets.only(top: 50),
+          margin: const EdgeInsets.only(top: 20),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 15, top: 20, bottom: 20),
+                child: customeTextStyle("Tableau de bord", size: 18, fontWeight: FontWeight.w700),
+              ),
               Container(
-                margin: const EdgeInsets.all(15),
+                margin: const EdgeInsets.only(left: 25, right: 25),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -53,7 +58,7 @@ class DashBoardScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.all(15),
+                margin: const EdgeInsets.only(left: 25, right: 25, top: 30),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -69,7 +74,7 @@ class DashBoardScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.all(15),
+                margin: const EdgeInsets.only(left: 25, right: 25, top: 30),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

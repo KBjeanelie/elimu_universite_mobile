@@ -26,7 +26,7 @@ Icon customeIcon(IconData iconData, {color = black, double iconSize = 25}) {
 // Font app
 Text customeTextStyle(String text,
   {FontWeight fontWeight = FontWeight.normal,
-  double size = 15,
+  double size = 13,
   double letterSpace = 0.5,
   Color color = black,
   TextAlign align = TextAlign.start}) {

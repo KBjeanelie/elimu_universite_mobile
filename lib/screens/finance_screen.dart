@@ -36,13 +36,13 @@ class FinanceScreen extends StatelessWidget {
                 indicatorColor: getColorFromHex("#04294B"),
                 tabs: [
                   Tab(
-                    child: customeTextStyle("Réglé", size: 16, fontWeight: FontWeight.w600),
+                    child: customeTextStyle("Réglé", size: 14, fontWeight: FontWeight.w600),
                   ),
                   Tab(
-                    child: customeTextStyle("Non-Réglé", size: 16, fontWeight: FontWeight.w600),
+                    child: customeTextStyle("Non-Réglé", size: 14, fontWeight: FontWeight.w600),
                   ),
                   Tab(
-                    child: customeTextStyle("Total annuel", size: 16, fontWeight: FontWeight.w600),
+                    child: customeTextStyle("Total annuel", size: 14, fontWeight: FontWeight.w600),
                   )
                 ],
               ),

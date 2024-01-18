@@ -1,5 +1,6 @@
 import 'package:elimu_universite_mobile/config/size_config.dart';
 import 'package:elimu_universite_mobile/config/themes.dart';
+import 'package:elimu_universite_mobile/screens/messageview_screen.dart';
 import 'package:elimu_universite_mobile/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -33,7 +34,7 @@ class _ContactScreenState extends State<ContactScreen> {
               style: GoogleFonts.poppins(
                 fontWeight: FontWeight.bold,
                 color: black,
-                fontSize: getProportionateScreenHeight(20)
+                fontSize: getProportionateScreenHeight(18)
               ),
             ),
           ),
@@ -45,9 +46,16 @@ class _ContactScreenState extends State<ContactScreen> {
             child: Column(
               children: List.generate(
                 4,
-                (index) => const EleveCard3(
-                  name: "Will Kenny",
-                  photoProfil: "assets/user_profile.jpeg",
+                (index) => GestureDetector(
+                  onTap: (){
+                    Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const MessageViews())
+                    );
+                  },
+                  child: const EleveCard3(
+                    name: "Will Kenny",
+                    photoProfil: "assets/user_profile.jpeg",
+                  ),
                 ),
               ),
             ),

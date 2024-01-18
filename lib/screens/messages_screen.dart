@@ -24,7 +24,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
               style: GoogleFonts.poppins(
                 fontWeight: FontWeight.bold,
                 color: black,
-                fontSize: getProportionateScreenHeight(20)
+                fontSize: getProportionateScreenHeight(18)
               ),
             ),
           ),

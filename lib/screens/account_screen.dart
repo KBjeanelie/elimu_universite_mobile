@@ -23,7 +23,7 @@ class _AccountScreenState extends State<AccountScreen> {
             style: GoogleFonts.poppins(
               fontWeight: FontWeight.bold,
               color: black,
-              fontSize: getProportionateScreenHeight(20)
+              fontSize: getProportionateScreenHeight(18)
             ),
           ),
         ),
