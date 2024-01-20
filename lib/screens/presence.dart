@@ -109,7 +109,7 @@ class Presence extends StatelessWidget {
                 children: [
                   PresenceD(
                     jours: '14 Janviers 2024',
-                    presence: 'Absence',
+                    presence: 'Absent',
                     couleur: Colors.red,
                   ),
                   PresenceD(
