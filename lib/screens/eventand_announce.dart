@@ -222,7 +222,7 @@ class EventAnnouce extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
-            print('Inscription');
+            // print('Inscription');
           },
           label: const Text('S\'inscrire'),
           backgroundColor: const Color.fromARGB(255, 0, 26, 65),
