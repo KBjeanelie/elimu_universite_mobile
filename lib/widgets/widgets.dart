@@ -1,32 +1,34 @@
 // C'est dans ce fichier que sera créer tous les widgets nécéssaire à notre application
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../config/themes.dart';
 
 
 Container messageGroupModel(BuildContext context){
   return Container(
-    margin: const EdgeInsets.only(left: 15, right: 15, top: 15),
+    margin: const EdgeInsets.only(left: 15, right: 15, top: 5),
     child: Row(
       children: [
         Container(
-          margin: const EdgeInsets.only(bottom: 140),
+          margin: const EdgeInsets.only(bottom: 100),
           child: CircleAvatar(backgroundColor: Colors.grey.shade500,)
         ),
         Expanded(
           child: Container(
-            margin: const EdgeInsets.only(left: 15),
-            padding: const EdgeInsets.only(top: 5, left: 8, right: 8, bottom: 5),
+            margin: const EdgeInsets.only(left: 2),
+            padding: const EdgeInsets.all(5),
             decoration: BoxDecoration(
               color: getColorFromHex("#FAFF00"),
-              borderRadius: BorderRadius.circular(5)
+              borderRadius: BorderRadius.circular(20)
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                customeTextStyle("Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée."),
+                customeTextStyleMessage("Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.",
+                size: 12),
                 Container(
-                  child: customeTextStyle("12:41"),
+                  child: customeTextStyleMessage("12:41", size: 9),
                 )
               ],
             ),
@@ -40,30 +42,32 @@ Container messageGroupModel(BuildContext context){
 
 Container messageGroupUser(BuildContext context){
   return Container(
-    margin: const EdgeInsets.only(left: 15, right: 15, top: 15),
+    margin: const EdgeInsets.only(left: 15, right: 15, top: 5),
     child: Row(
       children: [
         Expanded(
           child: Container(
-            margin: const EdgeInsets.only(right: 15),
-            padding: const EdgeInsets.only(top: 5, left: 8, right: 8, bottom: 5),
+            margin: const EdgeInsets.only(right: 2),
+            padding: const EdgeInsets.all(5),
             decoration: BoxDecoration(
-              color: getColorFromHex("#00000008"),
-              borderRadius: BorderRadius.circular(5)
+              color: Colors.grey.shade100,
+              borderRadius: BorderRadius.circular(20)
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                customeTextStyle("Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée."),
+                customeTextStyleMessage("Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.",
+                size: 13
+                ),
                 Container(
-                  child: customeTextStyle("12:41"),
+                  child: customeTextStyleMessage("12:41", size: 9),
                 )
               ],
             ),
           ),
         ),
         Container(
-          margin: const EdgeInsets.only(bottom: 140),
+          margin: const EdgeInsets.only(bottom: 130),
           child: CircleAvatar(backgroundColor: Colors.grey.shade500,)
         ),
       ],
@@ -86,8 +90,8 @@ Container cardFinance(BuildContext context){
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          customeTextStyle("Frais Mensuel", size: 17, fontWeight: FontWeight.bold),
-          customeTextStyle("Octobre", size: 17, fontWeight: FontWeight.bold),
+          customeTextStyle("Frais Mensuel", size: 15, fontWeight: FontWeight.bold),
+          customeTextStyle("Octobre", size: 15, fontWeight: FontWeight.bold),
         ],
       ),
       Container(
@@ -117,8 +121,8 @@ Container cardFinance(BuildContext context){
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            customeTextStyle("Total", size: 17, fontWeight: FontWeight.bold),
-            customeTextStyle("30 000F CFA", size: 17, fontWeight: FontWeight.bold),
+            customeTextStyle("Total", size: 15, fontWeight: FontWeight.bold),
+            customeTextStyle("30 000F CFA", size: 15, fontWeight: FontWeight.bold),
           ],
         ),
       )
@@ -129,7 +133,7 @@ Container cardFinance(BuildContext context){
 Container cardMenue(BuildContext context, IconData icon, String label, {Color color = black}){
   return Container(
     width: MediaQuery.sizeOf(context).width * 0.4,
-    height: MediaQuery.sizeOf(context).height * 0.2,
+    height: MediaQuery.sizeOf(context).height * 0.17,
     alignment: Alignment.center,
     decoration: BoxDecoration(
       color: white,
@@ -148,11 +152,11 @@ Container cardMenue(BuildContext context, IconData icon, String label, {Color co
       children: <Widget>[
         Container(
           margin: top,
-          child: customeIcon(icon, color: color, iconSize: 80,)),
+          child: customeIcon(icon, color: color, iconSize: 70,)),
         Container(
           margin: top,
           alignment: Alignment.center,
-          child: customeTextStyle(label))
+          child: customeTextStyle(label, size: 13))
       ],
     ),
   );
@@ -161,8 +165,8 @@ Container cardMenue(BuildContext context, IconData icon, String label, {Color co
 Container cardCareer(BuildContext context){
   return Container(
     margin: const EdgeInsets.only(top: 30),
-    width: MediaQuery.sizeOf(context).width * 0.8,
-    height: MediaQuery.sizeOf(context).height * 0.42,
+    width: MediaQuery.sizeOf(context).width * 0.7,
+    height: MediaQuery.sizeOf(context).height * 0.4,
     decoration: BoxDecoration(
       color: white,
       borderRadius: BorderRadius.circular(20),
@@ -181,17 +185,17 @@ Container cardCareer(BuildContext context){
         Container(
           margin: top,
           alignment: Alignment.center,
-          width: 65,
-          height: 65,
+          width: 50,
+          height: 50,
           decoration: BoxDecoration(
             color: getColorFromHex("#A066FF"),
             borderRadius: BorderRadius.circular(50)
           ),
-          child: customeIcon(EvaIcons.homeOutline, iconSize: 35, color: getColorFromHex("#794DC0")),
+          child: customeIcon(EvaIcons.homeOutline, iconSize: 30, color: getColorFromHex("#794DC0")),
         ),
         Container(
-          margin: const EdgeInsets.only(top: 20),
-          child: customeTextStyle("Parcours :", size: 17, fontWeight: FontWeight.w600),
+          margin: const EdgeInsets.only(top: 10),
+          child: customeTextStyle("Parcours :", size: 15, fontWeight: FontWeight.w600),
         ),
         Container(
           child: customeTextStyle("Lic Info 1", fontWeight: FontWeight.w600),
@@ -201,7 +205,7 @@ Container cardCareer(BuildContext context){
           child: lineBar,
         ),
         Container(
-          child: customeTextStyle("Niveau :", size: 17, fontWeight: FontWeight.w600),
+          child: customeTextStyle("Niveau :", size: 15, fontWeight: FontWeight.w600),
         ),
         Container(
           child: customeTextStyle("Première année", fontWeight: FontWeight.w600),
@@ -211,7 +215,7 @@ Container cardCareer(BuildContext context){
           child: lineBar,
         ),
         Container(
-          child: customeTextStyle("Moyenne :", size: 17, fontWeight: FontWeight.w600),
+          child: customeTextStyle("Moyenne :", size: 15, fontWeight: FontWeight.w600),
         ),
         Container(
           child: customeTextStyle("12,50", fontWeight: FontWeight.w600),
@@ -221,7 +225,7 @@ Container cardCareer(BuildContext context){
           child: lineBar,
         ),
         Container(
-          child: customeTextStyle("Année académique :", size: 17, fontWeight: FontWeight.w600),
+          child: customeTextStyle("Année académique :", size: 15, fontWeight: FontWeight.w600),
         ),
         Container(
           child: customeTextStyle("2022 - 2023", fontWeight: FontWeight.w600),
@@ -230,3 +234,135 @@ Container cardCareer(BuildContext context){
     ),
   );
 }
+
+
+class EleveCard extends StatefulWidget {
+  final String name;
+  final String photoProfil;
+  final String country;
+  const EleveCard({
+    Key? key,
+    required this.name,
+    required this.photoProfil,
+    required this.country,
+  }) : super(key: key);
+
+  @override
+  State<EleveCard> createState() => _EleveCardState();
+}
+
+class _EleveCardState extends State<EleveCard> {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const SizedBox(
+            height: 20,
+          ),
+          ClipOval(
+            child: Image.asset(
+              widget.photoProfil,
+              width: 100,
+              height: 100,
+              fit: BoxFit.cover,
+            ),
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          Text(
+            widget.name, // Utilisez widget.nomPrenom ici
+            style: GoogleFonts.poppins(
+              fontSize: 25,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+          Text(
+            widget.country, // Utilisez widget.nomPrenom ici
+            style: GoogleFonts.poppins(
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+class EleveCard2 extends StatefulWidget {
+  final String name;
+  final String photoProfil;
+  final String descrip;
+  const EleveCard2({
+    Key? key,
+    required this.name,
+    required this.photoProfil,
+    required this.descrip,
+  }) : super(key: key);
+
+  @override
+  State<EleveCard2> createState() => _EleveCard2State();
+}
+
+class _EleveCard2State extends State<EleveCard2> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.grey.shade100,
+      margin: const EdgeInsets.only(top: 2),
+      child: ListTile(
+        leading: ClipOval(
+            child: Image.asset(
+              widget.photoProfil,
+              width: 40,
+              height: 40,
+              fit: BoxFit.cover,
+            ),
+          ),
+        title: customeTextStyle(widget.name, size: 13, fontWeight: FontWeight.w600),
+        subtitle: customeTextStyleMessage('${widget.descrip.substring(0, 50)}...', size: 12, fontWeight: FontWeight.w300),
+      ),
+    );
+  }
+}
+
+
+class EleveCard3 extends StatefulWidget {
+  final String name;
+  final String photoProfil;
+  const EleveCard3({
+    Key? key,
+    required this.name,
+    required this.photoProfil,
+  }) : super(key: key);
+
+  @override
+  State<EleveCard3> createState() => _EleveCard3State();
+}
+
+class _EleveCard3State extends State<EleveCard3> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.grey.shade100,
+      margin: const EdgeInsets.only(top: 2),
+      child: ListTile(
+        leading: ClipOval(
+            child: Image.asset(
+              widget.photoProfil,
+              width: 40,
+              height: 40,
+              fit: BoxFit.cover,
+            ),
+          ),
+        title: customeTextStyle(widget.name, size: 13, fontWeight: FontWeight.w600),
+        
+      ),
+    );
+  }
+}
+

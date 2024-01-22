@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 const white = Colors.white;
 const black = Colors.black;
@@ -25,6 +26,24 @@ Icon customeIcon(IconData iconData, {color = black, double iconSize = 25}) {
 // Font app
 Text customeTextStyle(String text,
   {FontWeight fontWeight = FontWeight.normal,
+  double size = 13,
+  double letterSpace = 0.5,
+  Color color = black,
+  TextAlign align = TextAlign.start}) {
+  return Text(
+    text,
+    textAlign: align,
+    style: GoogleFonts.comfortaa(
+      color: color,
+      letterSpacing: letterSpace,
+      fontSize: size,
+      fontWeight: fontWeight
+    )
+  );
+}
+
+Text customeTextStyleMessage(String text,
+  {FontWeight fontWeight = FontWeight.normal,
   double size = 15,
   double letterSpace = 0.5,
   Color color = black,
@@ -32,7 +51,7 @@ Text customeTextStyle(String text,
   return Text(
     text,
     textAlign: align,
-    style: TextStyle(
+    style: GoogleFonts.openSans(
       color: color,
       letterSpacing: letterSpace,
       fontSize: size,

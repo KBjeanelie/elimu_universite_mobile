@@ -1,8 +1,12 @@
+import 'package:elimu_universite_mobile/config/themes.dart';
 import 'package:elimu_universite_mobile/screens/carreer_screen.dart';
+import 'package:elimu_universite_mobile/screens/devoir.dart';
+import 'package:elimu_universite_mobile/screens/eventandAnnounce.dart';
 import 'package:elimu_universite_mobile/screens/finance_screen.dart';
 import 'package:elimu_universite_mobile/widgets/widgets.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 
 class DashBoardScreen extends StatelessWidget {
   const DashBoardScreen({super.key});
@@ -10,41 +14,67 @@ class DashBoardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: white,
+        title: customeTextStyle("Bonjour, Ruth", size: 14),
+        actions: [
+          IconButton(
+            onPressed: () {
+              
+            },
+            icon: CircleAvatar(
+              backgroundColor: Colors.grey.shade200,
+              child: customeIcon(IconlyLight.notification),
+            ),
+          )
+        ],
+      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.only(bottom: 15),
         child: Container(
-          margin: const EdgeInsets.only(top: 50),
+          margin: const EdgeInsets.only(top: 20),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 15, top: 20, bottom: 20),
+                child: customeTextStyle("Tableau de bord", size: 18, fontWeight: FontWeight.w700),
+              ),
               Container(
-                margin: const EdgeInsets.all(15),
+                margin: const EdgeInsets.only(left: 25, right: 25),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    cardMenue(context, EvaIcons.calendarOutline, "Emplois du temps", color: Colors.blue),
+                    cardMenue(context, IconlyLight.calendar, "Emplois du temps", color: Colors.blue),
                     GestureDetector(
                       onTap: (){
                         Navigator.push(context,
                           MaterialPageRoute(builder: (context) => const FinanceScreen())
                         );
                       },
-                      child: cardMenue(context, EvaIcons.barChart2Outline, "Finance", color: Colors.orange)),
+                      child: cardMenue(context, IconlyLight.chart, "Finance", color: Colors.orange)),
                     
                   ],
                 ),
               ),
               Container(
-                margin: const EdgeInsets.all(15),
+                margin: const EdgeInsets.only(left: 25, right: 25, top: 30),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    cardMenue(context, EvaIcons.book, "e-book", color: Colors.red),
-                    cardMenue(context, EvaIcons.volumeUpOutline, "Evénement et annonce", color: Colors.green)
+                    cardMenue(context, IconlyLight.bookmark, "e-book", color: Colors.red),
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => const EventAnnouce())
+                        );
+                      },
+                      child: cardMenue(context, IconlyLight.volumeUp, "Information", color: Colors.green))
                   ],
                 ),
               ),
               Container(
-                margin: const EdgeInsets.all(15),
+                margin: const EdgeInsets.only(left: 25, right: 25, top: 30),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -54,8 +84,8 @@ class DashBoardScreen extends StatelessWidget {
                           MaterialPageRoute(builder: (context) => const CarreerScreen())
                         );
                       },
-                      child: cardMenue(context, EvaIcons.homeOutline, "Parcours", color: Colors.yellow.shade900)),
-                    cardMenue(context, EvaIcons.pieChartOutline, "Moyenne(s) & Note(s)", color: Colors.purple),
+                      child: cardMenue(context, IconlyLight.work, "Parcours", color: Colors.yellow.shade900)),
+                    cardMenue(context, EvaIcons.pieChartOutline, "Évaluations", color: Colors.purple),
                     
                   ],
                 ),
@@ -65,7 +95,13 @@ class DashBoardScreen extends StatelessWidget {
               //   child: Row(
               //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
               //     children: [
-              //       cardMenue(context, EvaIcons.edit2Outline, "Devoir de maison"),
+              //       GestureDetector(
+              //         onTap: (){
+              //           Navigator.push(context,
+              //             MaterialPageRoute(builder: (context) => const DevoirScreen())
+              //           );
+              //         },
+              //         child: cardMenue(context, IconlyLight.editSquare, "Devoir de maison")),
               //       cardMenue(context, EvaIcons.checkmarkSquare, "Présence"),
               //     ],
               //   ),
