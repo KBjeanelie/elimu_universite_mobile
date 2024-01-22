@@ -1,8 +1,10 @@
 import 'package:elimu_universite_mobile/config/themes.dart';
 import 'package:elimu_universite_mobile/screens/carreer_screen.dart';
-import 'package:elimu_universite_mobile/screens/devoir.dart';
-import 'package:elimu_universite_mobile/screens/eventandAnnounce.dart';
+import 'package:elimu_universite_mobile/screens/ebook.dart';
+import 'package:elimu_universite_mobile/screens/eventand_announce.dart';
 import 'package:elimu_universite_mobile/screens/finance_screen.dart';
+import 'package:elimu_universite_mobile/screens/note_et_moyenne.dart';
+import 'package:elimu_universite_mobile/screens/planning.dart';
 import 'package:elimu_universite_mobile/widgets/widgets.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +47,13 @@ class DashBoardScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    cardMenue(context, IconlyLight.calendar, "Emplois du temps", color: Colors.blue),
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => const EmploiDuTemps())
+                        );
+                      },
+                      child: cardMenue(context, IconlyLight.calendar, "Emplois du temps", color: Colors.blue)),
                     GestureDetector(
                       onTap: (){
                         Navigator.push(context,
@@ -62,7 +70,13 @@ class DashBoardScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    cardMenue(context, IconlyLight.bookmark, "e-book", color: Colors.red),
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => const EbookScreen())
+                        );
+                      },
+                      child: cardMenue(context, IconlyLight.bookmark, "e-book", color: Colors.red)),
                     GestureDetector(
                       onTap: (){
                         Navigator.push(context,
@@ -85,7 +99,13 @@ class DashBoardScreen extends StatelessWidget {
                         );
                       },
                       child: cardMenue(context, IconlyLight.work, "Parcours", color: Colors.yellow.shade900)),
-                    cardMenue(context, EvaIcons.pieChartOutline, "Évaluations", color: Colors.purple),
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => const MoyenneScreen())
+                        );
+                      },
+                      child: cardMenue(context, EvaIcons.pieChartOutline, "Évaluations", color: Colors.purple)),
                     
                   ],
                 ),

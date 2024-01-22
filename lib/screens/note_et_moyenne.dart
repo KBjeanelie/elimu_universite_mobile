@@ -10,8 +10,7 @@ class MoyenneScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool _isAdmit = false;
-    return SafeArea(
-      child: Scaffold(
+    return Scaffold(
         backgroundColor: Colors.grey.shade200,
         appBar: AppBar(
           elevation: 1,
@@ -178,8 +177,7 @@ class MoyenneScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }
 
