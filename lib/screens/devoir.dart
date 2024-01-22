@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class DevoirScreen extends StatelessWidget {
   const DevoirScreen({super.key});
 
@@ -14,13 +13,14 @@ class DevoirScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           leading: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: const Icon(
-                IconlyLight.arrowLeft2,
-                color: Colors.black,
-              )),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              IconlyLight.arrowLeft2,
+              color: Colors.black,
+            ),
+          ),
           title: const CustomAppBar(
             text: 'Devoir Maison',
           ),
@@ -96,14 +96,17 @@ class ContainerMatiere extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             //bande de couleur de gauche
-            Container(
-              height: getProportionateScreenHeight(100),
-              width: 5,
-              decoration: const BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+              child: Container(
+                height: getProportionateScreenHeight(100),
+                width: 5,
+                decoration: const BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    bottomRight: Radius.circular(20),
+                  ),
                 ),
               ),
             ),
@@ -161,14 +164,17 @@ class ContainerMatiere extends StatelessWidget {
               ],
             ),
             //bande de couleur de droite
-            Container(
-              height: getProportionateScreenHeight(100),
-              width: 5,
-              decoration: const BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  bottomLeft: Radius.circular(20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+              child: Container(
+                height: getProportionateScreenHeight(100),
+                width: 5,
+                decoration: const BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    bottomLeft: Radius.circular(20),
+                  ),
                 ),
               ),
             ),
