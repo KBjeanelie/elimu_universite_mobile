@@ -1,7 +1,6 @@
 import 'package:elimu_universite_mobile/config/themes.dart';
 import 'package:elimu_universite_mobile/screens/carreer_screen.dart';
-import 'package:elimu_universite_mobile/screens/devoir.dart';
-import 'package:elimu_universite_mobile/screens/eventandAnnounce.dart';
+import 'package:elimu_universite_mobile/screens/eventand_announce.dart';
 import 'package:elimu_universite_mobile/screens/finance_screen.dart';
 import 'package:elimu_universite_mobile/widgets/widgets.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
