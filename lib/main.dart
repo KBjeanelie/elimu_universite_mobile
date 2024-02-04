@@ -1,8 +1,5 @@
 import 'package:elimu_universite_mobile/config/size_config.dart';
-import 'package:elimu_universite_mobile/screens/ebook.dart';
 import 'package:elimu_universite_mobile/screens/note_et_moyenne.dart';
-import 'package:elimu_universite_mobile/screens/planning.dart';
-import 'package:elimu_universite_mobile/screens/presence.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:io' show Platform;
