@@ -8,8 +8,7 @@ class EbookScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
+    return Scaffold(
         backgroundColor: Colors.grey.shade200,
         appBar: AppBar(
           leading: IconButton(
@@ -62,7 +61,7 @@ class EbookScreen extends StatelessWidget {
                           width: double.infinity,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            color: Colors.amber,
+                            color: Colors.grey.shade400,
                           ),
                         ),
                         Text(
@@ -80,7 +79,6 @@ class EbookScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }

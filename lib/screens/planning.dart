@@ -44,8 +44,7 @@ class _EmploiDuTempsState extends State<EmploiDuTemps> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           leading: IconButton(
             onPressed: () {
@@ -101,8 +100,7 @@ class _EmploiDuTempsState extends State<EmploiDuTemps> {
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }
 
