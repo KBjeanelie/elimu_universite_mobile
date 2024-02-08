@@ -1,6 +1,4 @@
 import 'package:elimu_universite_mobile/config/size_config.dart';
-import 'package:elimu_universite_mobile/screens/account_screen.dart';
-import 'package:elimu_universite_mobile/screens/login.dart';
 import 'package:elimu_universite_mobile/screens/note_et_moyenne.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -40,7 +38,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue.shade900),
         useMaterial3: false,
       ),
-      home: const AccountScreen(),
+      home: const MoyenneScreen(),
     );
   }
 }
