@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import '../config/size_config.dart';
 import '../config/themes.dart';
 
@@ -12,7 +12,23 @@ class SecurityScreen extends StatefulWidget {
 }
 
 class _SecurityScreenState extends State<SecurityScreen> {
+  // Enregistrement du mot de passe
+void savePassword(String password) async {
+  final storage = FlutterSecureStorage();
+  await storage.write(key: 'password', value: password);
+}
   bool isActive = false;
+  final TextEditingController _passwordController =
+      TextEditingController(); // Déclaration du TextEditingController
+  bool _validatePassword = false; // Ajout de la variable _validatePassword
+
+  @override
+  void dispose() {
+    _passwordController
+        .dispose(); // N'oubliez pas de libérer le TextEditingController lorsqu'il n'est plus nécessaire
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -76,49 +92,46 @@ class _SecurityScreenState extends State<SecurityScreen> {
                 height: 50,
               ),
               isActive
-  ? AnimatedOpacity(
-      opacity: isActive ? 1.0 : 0.0,
-      duration: const Duration(milliseconds: 400),
-      child: TextFormField(
-        obscureText: true,
-        decoration: InputDecoration(
-          labelText: 'Enter your password',
-          errorText: _validatePassword
-              ? (_passwordController.text.isEmpty
-                  ? 'Please enter your password'
-                  : 'Password must be at least 4 characters')
-              : null,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15.0),
-          ),
-        ),
-        controller: _passwordController, // Utilisez un TextEditingController pour obtenir la valeur du champ
-        onChanged: (value) {
-          setState(() {
-            _validatePassword = false; // Réinitialiser l'état de la validation lorsqu'une modification est apportée
-          });
-        },
-        validator: (value) {
-          // Ajoutez votre logique de validation ici
-          if (value == null || value.isEmpty) {
-            setState(() {
-              _validatePassword = true;
-            });
-            return 'Please enter your password';
-          }
-          if (value.length < 4) {
-            setState(() {
-              _validatePassword = true;
-            });
-            return 'Password must be at least 4 characters';
-          }
-          // Autres validations...
-          return null;
-        },
-      ),
-    )
-  : const SizedBox(),
-
+                  ? AnimatedOpacity(
+                      opacity: isActive ? 1.0 : 0.0,
+                      duration: const Duration(milliseconds: 400),
+                      child: TextFormField(
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          labelText: 'Enter your password',
+                          errorText: _validatePassword
+                              ? (_passwordController.text.isEmpty
+                                  ? 'Please enter your password'
+                                  : 'Password must be at least 4 characters')
+                              : null,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                        ),
+                        controller: _passwordController,
+                        onChanged: (value) {
+                          setState(() {
+                            _validatePassword = false;
+                          });
+                        },
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            setState(() {
+                              _validatePassword = true;
+                            });
+                            return 'Please enter your password';
+                          }
+                          if (value.length < 4) {
+                            setState(() {
+                              _validatePassword = true;
+                            });
+                            return 'Password must be at least 4 characters';
+                          }
+                          return null;
+                        },
+                      ),
+                    )
+                  : const SizedBox(),
               SizedBox(
                 height: getProportionateScreenHeight(5),
               ),
