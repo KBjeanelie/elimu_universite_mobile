@@ -22,14 +22,13 @@ class _AccountScreenState extends State<AccountScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: white,
-        title: Center(
-          child: Text(
-            "Profile",
-            style: GoogleFonts.poppins(
-                fontWeight: FontWeight.bold,
-                color: black,
-                fontSize: getProportionateScreenHeight(18)),
-          ),
+        centerTitle: true,
+        title: Text(
+          "Profile",
+          style: GoogleFonts.poppins(
+              fontWeight: FontWeight.bold,
+              color: black,
+              fontSize: getProportionateScreenHeight(18)),
         ),
       ),
       body: Column(
