@@ -33,16 +33,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _widgetOptions.elementAt(_currentIndex),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.blue,
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(40)
-        ),
-        onPressed: (){},
-        child: customeIcon(EvaIcons.plus, color: white, iconSize: 30),
-      ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.grey.shade200,
         currentIndex: _currentIndex,
