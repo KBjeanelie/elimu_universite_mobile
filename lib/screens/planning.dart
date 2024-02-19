@@ -1,3 +1,4 @@
+import 'package:elimu_universite_mobile/config/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:elimu_universite_mobile/config/size_config.dart';
 import 'package:elimu_universite_mobile/config/color_border_container.dart';
@@ -5,7 +6,7 @@ import 'package:elimu_universite_mobile/widget/custom_appbar.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-List<String> weekDays = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'];
+List<String> weekDays = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
 
 List<List<String>> coursListByDay = [
   [
@@ -80,7 +81,7 @@ class _EmploiDuTempsState extends State<EmploiDuTemps> {
                         child: DayS(
                           jour: day,
                           isDay: day == selectedDay,
-                          isRed: day == 'Sam' || day == 'Dim',
+                          isRed: day == 'Sam',
                         ),
                       ),
                   ],
@@ -147,14 +148,7 @@ class PauseTime extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            '12:00',
-            style: GoogleFonts.poppins(
-              color: Colors.black,
-              fontWeight: FontWeight.w600,
-              fontSize: 17.5,
-            ),
-          ),
+          customeTextStyle("12:00"),
           Container(
             height: getProportionateScreenHeight(35),
             width: getProportionateScreenWidth(250),
@@ -167,14 +161,7 @@ class PauseTime extends StatelessWidget {
                 width: 2,
               ),
             ),
-            child: Text(
-              'PAUSE',
-              style: GoogleFonts.poppins(
-                color: Colors.red,
-                fontWeight: FontWeight.w600,
-                fontSize: 16,
-              ),
-            ),
+            child: customeTextStyle('PAUSE')
           ),
         ],
       ),
@@ -197,33 +184,19 @@ class CoursTime extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 35),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
-            heure,
-            style: const TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.w600,
-              fontSize: 17.5,
-            ),
-          ),
+          customeTextStyle(heure),
           Container(
             height: 35,
             width: 250,
+            margin: const EdgeInsets.only(left: 5),
             alignment: Alignment.center,
             decoration: BoxDecoration(
               color: bkColors,
               borderRadius: BorderRadius.circular(5),
             ),
-            child: Text(
-              cours,
-              style: const TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w600,
-                fontSize: 16,
-              ),
-            ),
+            child: customeTextStyle(cours)
           ),
         ],
       ),
@@ -290,8 +263,6 @@ String getCurrentDay() {
       return 'Ven';
     case 6:
       return 'Sam';
-    case 7:
-      return 'Dim';
     default:
       return 'Lun';
   }
