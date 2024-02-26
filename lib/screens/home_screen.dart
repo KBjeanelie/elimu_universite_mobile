@@ -3,7 +3,6 @@ import 'package:elimu_universite_mobile/screens/account_screen.dart';
 import 'package:elimu_universite_mobile/screens/contact_screen.dart';
 import 'package:elimu_universite_mobile/screens/dashboard_screen.dart';
 import 'package:elimu_universite_mobile/screens/messages_screen.dart';
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 

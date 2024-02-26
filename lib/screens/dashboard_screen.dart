@@ -1,4 +1,5 @@
 import 'package:elimu_universite_mobile/config/themes.dart';
+import 'package:elimu_universite_mobile/screens/account_screen.dart';
 import 'package:elimu_universite_mobile/screens/carreer_screen.dart';
 import 'package:elimu_universite_mobile/screens/ebook.dart';
 import 'package:elimu_universite_mobile/screens/eventand_announce.dart';
@@ -22,11 +23,13 @@ class DashBoardScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const AccountScreen())
+              );
             },
             icon: CircleAvatar(
               backgroundColor: Colors.grey.shade200,
-              child: customeIcon(IconlyLight.notification),
+              child: customeIcon(IconlyLight.profile),
             ),
           )
         ],

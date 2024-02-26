@@ -1,11 +1,12 @@
 import 'package:elimu_universite_mobile/config/size_config.dart';
-import 'package:elimu_universite_mobile/config/themes.dart';
 import 'package:elimu_universite_mobile/screens/login.dart';
 import 'package:elimu_universite_mobile/screens/security_screen.dart';
 import 'package:elimu_universite_mobile/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../widget/custom_appbar.dart';
 
 class AccountScreen extends StatefulWidget {
   const AccountScreen({super.key});
@@ -21,15 +22,21 @@ class _AccountScreenState extends State<AccountScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: white,
-        centerTitle: true,
-        title: Text(
-          "Profile",
-          style: GoogleFonts.poppins(
-              fontWeight: FontWeight.bold,
-              color: black,
-              fontSize: getProportionateScreenHeight(18)),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            IconlyLight.arrowLeft2,
+            color: Colors.black,
+          ),
         ),
+        title: const CustomAppBar(
+          text: 'Profile',
+        ),
+        elevation: 0.5,
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
