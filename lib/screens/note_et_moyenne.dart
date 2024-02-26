@@ -4,13 +4,12 @@ import 'package:elimu_universite_mobile/config/themes.dart';
 import 'package:elimu_universite_mobile/widget/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class MoyenneScreen extends StatelessWidget {
   const MoyenneScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    bool _isAdmit = false;
+    //bool _isAdmit = false;
     return Scaffold(
         backgroundColor: Colors.grey.shade200,
         appBar: AppBar(

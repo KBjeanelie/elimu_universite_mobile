@@ -4,7 +4,6 @@ import 'package:elimu_universite_mobile/config/size_config.dart';
 import 'package:elimu_universite_mobile/config/color_border_container.dart';
 import 'package:elimu_universite_mobile/widget/custom_appbar.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 List<String> weekDays = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
 
